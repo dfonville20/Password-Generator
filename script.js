@@ -10,9 +10,12 @@ const upperCaseArray = UpperCase.split("");
 const numberArray = numbers.split("");
 const SpecialCharacArray = specialCharac.split("");
 
-let arrayOfArrays 
+//let arrayOfArrays 
 
-let length = prompt('How long should your password be?');
+function generatePassword() {
+    let passwordLength = prompt("How long should the password be?");
+
+} 
 
 
 
