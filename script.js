@@ -6,23 +6,38 @@ const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers = "0123456789";
 const specialCharac = "!@#$%&*/";
 const lowerCaseArray = lowerCase.split("");
-const upperCaseArray = UpperCase.split("");
+const upperCaseArray = upperCase.split("");
 const numberArray = numbers.split("");
 const SpecialCharacArray = specialCharac.split("");
 
 //let arrayOfArrays 
 
-function generatePassword() {
-    let passwordLength = prompt("How long should the password be?");
 
-} 
+let passwordLength = prompt("How long should the password be? 8 - 128 characters");
+let upperCase = confirm("Do you want upper case?");
+let lowerCase = confirm("Do you want lower case?");
+let numbers = confirm("Do you want numbers?");
+let SpecialCharac = confirm("Do you want special characters?");
 
+if confirm.upperCase {
+  
+}
+if confirm.lowerCase {
+
+  
+}if confirm.numbers {
+  
+  
+}if confirm.specialCharac {
+
+  
+}
 
 
 // Write password to the #password input
 function writePassword() {
-  const password = generatePassword();
-  const passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 
