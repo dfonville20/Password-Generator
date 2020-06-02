@@ -5,10 +5,7 @@ const lowerCase = "abcdegfhijklmnopqrstuvwz";
 const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numbers = "0123456789";
 const specialCharac = "!@#$%&*/";
-const lowerCaseArray = lowerCase.split("");
-const upperCaseArray = upperCase.split("");
-const numberArray = numbers.split("");
-const SpecialCharacArray = specialCharac.split("");
+
 
 //let arrayOfArrays 
 
@@ -55,6 +52,8 @@ if (passwordSpecialCharac === true && passwordArray.length < passwordLength) {
   specialConfirm = false;
 }
 
+let passwordCharacters = passwordArray.join ("");
+  return passwordCharacters
 
 
 // Write password to the #password input
