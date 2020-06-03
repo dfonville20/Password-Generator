@@ -1,69 +1,87 @@
 // Assignment Code do not put the variable before the function
-const generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector("#generate");
+var generateSelect = document.querySelector("#password");
 
-const lowerCase = "abcdegfhijklmnopqrstuvwz";
-const upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-const numbers = "0123456789";
-const specialCharac = "!@#$%&*/";
+const lowercaseCharacters = "abcdegfhijklmnopqrstuvwz";
+const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+const numericalCharacters = "0123456789";
+const specialCharacters = "!@#$%&*/";
 
+function generatePassword() {
 
-//let arrayOfArrays 
+  let passwordArray = []
 
-let passwordLength = prompt("How long should the password be?", "8 - 128 characters");
-if (passwordLength < 8 || passwordLength > 128) {
-  let passwordLength = alert("Invalid selection, 8 - 128 characters only." <br> "Please try again.");
-console.log(passwordLength)
-let passwordUpperCase = confirm("Do you want upper case?");
-let passwordLowerCase = confirm("Do you want lower case?");
-let passwordNumbers = confirm("Do you want numbers?");
-let passwordSpecialCharac = confirm("Do you want special characters?");
-
-for (var i = 0; passwordArray.length < passwordLength; i++) {
-
-if (!lowercaseConfirm && !uppercaseConfirm && !numericalConfirm && !specialConfirm) {
-  alert("Please choose at least one character type to generate password.")
+  let isLengthInvalid = true;
 
 
-if (passwordUpperCase === true && passwordArray.length < passwordLength) {
-  let uppercaseInput = uppercaseCharacters.charAt(Math.floor(Math.random() * uppercaseCharacters.length));
-  passwordArray.push(uppercaseInput);
-} else {
-  uppercaseConfirm = false;
-}
+    let passwordLength = parseInt(prompt("Password must be between 8 and 128 characters."));
 
-if (passwordLowerCase === true && passwordArray.length <= passwordLength) {
-  let lowercaseInput = lowercaseCharacters.charAt(Math.floor(Math.random() * lowercaseCharacters.length));
-  passwordArray.push(lowercaseInput);
-} else {
-  lowercaseConfirm = false;
-}
-
-if (passwordNumbers === true && passwordArray.length < passwordLength) {
-  let numericalInput = numericalCharacters.charAt(Math.floor(Math.random() * numericalCharacters.length));
-  passwordArray.push(numericalInput);
-} else {
-  numericalConfirm = false;
-}
-
-if (passwordSpecialCharac === true && passwordArray.length < passwordLength) {
-  let specialInput = specialCharacters.charAt(Math.floor(Math.random() * specialCharacters.length));
-  passwordArray.push(specialInput);
-} else {
-  specialConfirm = false;
-}
-
-let passwordCharacters = passwordArray.join ("");
-  return passwordCharacters
+    console.log(passwordLength);
 
 
-// Write password to the #password input
-function writePassword() {
-  let password = generatePassword();
-  let passwordText = document.querySelector("#password");
+    if (passwordLength < 8 || passwordLength > 128) {
+      let passwordLength = alert("Please choose between 8 and 128 characters.");
+      continue;
+    }
+    
+    let lowercaseConfirm = window.confirm("Do you want lower case letters?");
 
-  passwordText.value = password;
+    let uppercaseConfirm = window.confirm("Do you want upper case letters?");
 
-}
+    let numericalConfirm = window.confirm("Do you want numbers letters?");
 
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+    let specialConfirm = window.confirm("Do you want special characters?");
+
+    if (!lowercaseConfirm && !uppercaseConfirm && !numericalConfirm && !specialConfirm) {
+      alert("You must choose one to generate password.")
+    }
+
+    for (var i = 0; passwordArray.length < passwordLength; i++) {
+
+      if (lowercaseConfirm === true && passwordArray.length <= passwordLength) {
+        let lowercaseInput = lowercaseCharacters.charAt(Math.floor(Math.random() * lowercaseCharacters.length));
+        passwordArray.push(lowercaseInput);
+        console.log(passwordArray.length)
+      } else {
+        lowercaseConfirm = false;
+      }
+ 
+      if (uppercaseConfirm === true && passwordArray.length < passwordLength) {
+        let uppercaseInput = uppercaseCharacters.charAt(Math.floor(Math.random() * uppercaseCharacters.length));
+        passwordArray.push(uppercaseInput);
+        console.log(passwordArray)
+      } else {
+        uppercaseConfirm = false;
+      }
+ 
+      if (numericalConfirm === true && passwordArray.length < passwordLength) {
+        let numericalInput = numericalCharacters.charAt(Math.floor(Math.random() * numericalCharacters.length));
+        passwordArray.push(numericalInput);
+        console.log(passwordArray)
+      } else {
+        numericalConfirm = false;
+      }
+ 
+      if (specialConfirm === true && passwordArray.length < passwordLength) {
+        let specialInput = specialCharacters.charAt(Math.floor(Math.random() * specialCharacters.length));
+        passwordArray.push(specialInput);
+        console.log(passwordArray)
+      } else {
+        specialConfirm = false;
+      }
+
+
+        let passwordCharacters = passwordArray.join("");
+        return passwordCharacters
+    }
+  }
+
+
+        // Write password to the #password input
+        function writePassword() {
+          var password = generatePassword();
+          var passwordText = document.querySelector("#password");
+
+          passwordText.value = password;
+
+        }
