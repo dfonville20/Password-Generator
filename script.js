@@ -21,8 +21,11 @@ function generatePassword() {
 
     if (passwordLength < 8 || passwordLength > 128) {
       let passwordLength = alert("Please choose between 8 and 128 characters.");
-      continue;
+    } 
+    else {
+      isLengthInvalid === true;
     }
+
     
     let lowercaseConfirm = window.confirm("Do you want lower case letters?");
 
@@ -73,8 +76,6 @@ function generatePassword() {
 
         let passwordCharacters = passwordArray.join("");
         return passwordCharacters
-    }
-  }
 
 
         // Write password to the #password input
